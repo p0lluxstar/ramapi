@@ -7,6 +7,9 @@
 
 @media (max-width: 580px) {
   .detailsCharacter {
-    background-color: #000000;
+    background-color: #131313;
+    box-shadow:
+      0px 0px 8px 2px #575757,
+      5px 5px 15px 5px #00000000;
   }
 }
