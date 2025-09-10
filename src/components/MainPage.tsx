@@ -7,7 +7,8 @@ import Head from 'next/head';
 import Header from '@/components/Header';
 import MainContent from '@/components/MainContent';
 import Loader from './Loader';
-/* import Loader from './Loader'; */
+import { useDispatch } from 'react-redux';
+import { toggleVisibleBlackout } from '@/redux/slices/visibleBlackoutSlice';
 
 interface IProps {
   characters: IDetailsCharacter[];
@@ -21,6 +22,7 @@ export default function MainPage({
   const [inputValue, setInputValue] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const router = useRouter();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setLoading(false);
@@ -46,7 +48,10 @@ export default function MainPage({
   const handleCloseDetails = (): void => {
     const currentParams = new URLSearchParams(window.location.search);
     currentParams.delete('details');
-    router.replace(`/?${currentParams.toString()}`);
+    router.replace(`/?${currentParams.toString()}`, {
+      scroll: false,
+    });
+    dispatch(toggleVisibleBlackout());
   };
 
   const handleCardClick = async (id: number): Promise<void> => {
@@ -56,8 +61,11 @@ export default function MainPage({
       return;
     }
     currentParams.set('details', id.toString());
-    router.replace(`/?${currentParams.toString()}`);
+    router.replace(`/?${currentParams.toString()}`, {
+      scroll: false,
+    });
     setLoading(true);
+    dispatch(toggleVisibleBlackout());
   };
 
   const handlePaginationClick = (): void => {

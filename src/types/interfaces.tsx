@@ -20,4 +20,7 @@ export interface IStoreReducer {
   selectedCardsSlice: {
     selectedCards: IDetailsCharacter[];
   };
+  visibleBlackoutSlice: {
+    visibleBlackout: boolean;
+  };
 }

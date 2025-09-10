@@ -49,32 +49,34 @@ export default function Header(props: IProps): JSX.Element {
         data-testid="header"
       >
         <Image src="/img/logo.png" width={196} height={62} alt="logo" />
-        <div className={styles.search}>
-          <span className={styles.apiName}>rickandmortyapi.com</span>
-          <input
-            className={`${styles.inputSearch} ${themeStyles.inputSearch}`}
-            id="search"
-            type="text"
-            placeholder={INPUT_PLACEHOLDER}
-            value={props.inputValue}
-            onChange={handleInputChange}
-            onKeyDown={handleKeyPress}
-          />
-          {showClearButton && (
-            <button className={styles.btnClear} onClick={handleClearInput}>
-              &times;
-            </button>
-          )}
-        </div>
-        <button
-          className={styles.btnSearch}
-          onClick={props.fetchSearchData}
-          disabled={isSearchDisabled}
-        >
-          <div>
-            <BiSearchAlt />
+        <div className={styles.searchWrapper}>
+          <div className={styles.search}>
+            <span className={styles.apiName}>rickandmortyapi.com</span>
+            <input
+              className={`${styles.inputSearch} ${themeStyles.inputSearch}`}
+              id="search"
+              type="text"
+              placeholder={INPUT_PLACEHOLDER}
+              value={props.inputValue}
+              onChange={handleInputChange}
+              onKeyDown={handleKeyPress}
+            />
+            {showClearButton && (
+              <button className={styles.btnClear} onClick={handleClearInput}>
+                &times;
+              </button>
+            )}
           </div>
-        </button>
+          <button
+            className={styles.btnSearch}
+            onClick={props.fetchSearchData}
+            disabled={isSearchDisabled}
+          >
+            <div>
+              <BiSearchAlt />
+            </div>
+          </button>
+        </div>
       </header>
     </>
   );

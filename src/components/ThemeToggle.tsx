@@ -3,6 +3,8 @@ import lightStyles from '../styles/themeToggle/LightThemeToggle.module.css';
 import darkStyles from '../styles/themeToggle/DarkThemeToggle.module.css';
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
+import { FaMoon } from 'react-icons/fa';
+import { FaSun } from 'react-icons/fa6';
 
 export default function ThemeToggle(): JSX.Element {
   const themeContext = useContext(ThemeContext);
@@ -11,7 +13,7 @@ export default function ThemeToggle(): JSX.Element {
   return (
     <div className={`${styles.themeToggle} ${themeStyles.themeToggle}`}>
       <button onClick={themeContext.toggleTheme}>
-        {themeContext.theme === 'light' ? '☀︎' : '☀︎'}
+        {themeContext.theme === 'light' ? <FaMoon /> : <FaSun />}
       </button>
     </div>
   );

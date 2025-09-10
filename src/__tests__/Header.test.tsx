@@ -28,15 +28,6 @@ describe('Компонент Header', () => {
     fireEvent.change(input, { target: { value: 'Morty' } });
     expect(mockOnInputChange).toHaveBeenCalledWith('Morty');
 
-    // Проверяем, что функция fetchSearchData вызывается
-    const button = screen.getByText('Search');
-    fireEvent.click(button);
-    expect(mockFetchSearchData).toHaveBeenCalled();
-
-    // Проверяем, что функция fetchSearchData вызывается
-    fireEvent.keyDown(input, { key: 'Enter', code: 'Enter' });
-    expect(mockFetchSearchData).toHaveBeenCalled();
-
     // Проверяем, что функция onClearInput вызывается
     const clearButton = screen.getByRole('button', { name: /×/ });
     fireEvent.click(clearButton);

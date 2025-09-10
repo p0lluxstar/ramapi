@@ -6,6 +6,11 @@
   padding: 0 20px;
 }
 
+.searchWrapper {
+  display: flex;
+  align-items: center;
+}
+
 .search {
   display: flex;
   align-items: center;
@@ -101,4 +106,30 @@
 .btnSearch svg {
   font-size: 26px;
   color: #8b8b8b;
+}
+
+@media (max-width: 1000px) {
+  .search {
+    width: 400px;
+  }
+}
+
+@media (max-width: 700px) {
+  .search {
+    width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .search {
+    width: 220px;
+  }
+}
+
+@media (max-width: 580px) {
+  .header {
+    flex-direction: column;
+    height: 200px;
+    gap: 20px;
+  }
 }

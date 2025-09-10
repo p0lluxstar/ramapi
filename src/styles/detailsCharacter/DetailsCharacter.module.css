@@ -1,10 +1,15 @@
 .detailsCharacter {
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
   border-radius: 5px;
   padding: 20px;
-  width: 38%;
+  width: 60%;
   height: 100%;
+  z-index: 18;
 }
 
 .detailsCharacter img {
@@ -18,8 +23,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 20px;
-  right: 20px;
+  top: 0px;
+  right: 0px;
   width: 26px;
   height: 26px;
   font-weight: 600;
@@ -51,5 +56,21 @@
 @media (max-width: 1200px) {
   .detailsCharacter {
     width: 50%;
+  }
+}
+
+@media (max-width: 580px) {
+  .detailsCharacter {
+    position: fixed;
+    width: 80%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .detailsCharacter button {
+    top: -1px;
+    right: 0px;
   }
 }

@@ -5,9 +5,12 @@
 }
 
 .themeToggle button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 36px;
   height: 36px;
-  font-size: 30px;
+  font-size: 24px;
   line-height: 30px;
   border: none;
   border-radius: 5px;
@@ -20,14 +23,14 @@
 
 @media (max-width: 1000px) {
   .themeToggle {
-    top: 8px;
+    top: 6px;
     right: 20px;
   }
 
   .themeToggle button {
-    width: 18px;
-    height: 18px;
-    font-size: 18px;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
     line-height: 18px;
   }
 }

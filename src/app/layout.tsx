@@ -4,7 +4,7 @@ import ReduxProvider from '@/redux/ReduxProvider';
 import { ThemeProvider } from '@/context/ThemeContext';
 
 export const metadata: Metadata = {
-  title: 'RSSchool | NextJS',
+  title: 'RAMapi | NextJS',
   description: 'Description main page',
 };
 

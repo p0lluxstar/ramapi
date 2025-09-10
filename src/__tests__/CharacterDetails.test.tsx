@@ -1,6 +1,8 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import DetailsCharacter from '@/components/DetailsCharacter';
+import { Provider } from 'react-redux';
+import store from '@/redux/store';
 
 const mockCharacter = {
   id: 1,
@@ -17,10 +19,12 @@ describe('Компонент CharacterDetails', () => {
     const mockOnClose = vi.fn();
 
     render(
-      <DetailsCharacter
-        detailsCharacter={mockCharacter}
-        onClose={mockOnClose}
-      />
+      <Provider store={store}>
+        <DetailsCharacter
+          detailsCharacter={mockCharacter}
+          onClose={mockOnClose}
+        />
+      </Provider>
     );
 
     // Проверка наличия элементов в документе
