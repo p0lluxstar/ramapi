@@ -8,7 +8,10 @@ import Header from '@/components/Header';
 import MainContent from '@/components/MainContent';
 import Loader from './Loader';
 import { useDispatch } from 'react-redux';
-import { toggleVisibleBlackout } from '@/redux/slices/visibleBlackoutSlice';
+import {
+  trueVisibleBlackout,
+  falseVisibleBlackout,
+} from '@/redux/slices/visibleBlackoutSlice';
 
 interface IProps {
   characters: IDetailsCharacter[];
@@ -51,7 +54,7 @@ export default function MainPage({
     router.replace(`/?${currentParams.toString()}`, {
       scroll: false,
     });
-    dispatch(toggleVisibleBlackout());
+    dispatch(falseVisibleBlackout());
   };
 
   const handleCardClick = async (id: number): Promise<void> => {
@@ -65,7 +68,7 @@ export default function MainPage({
       scroll: false,
     });
     setLoading(true);
-    dispatch(toggleVisibleBlackout());
+    dispatch(trueVisibleBlackout());
   };
 
   const handlePaginationClick = (): void => {

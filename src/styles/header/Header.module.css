@@ -126,10 +126,10 @@
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 614px) {
   .header {
     flex-direction: column;
-    height: 200px;
+    height: 160px;
     gap: 20px;
   }
 }

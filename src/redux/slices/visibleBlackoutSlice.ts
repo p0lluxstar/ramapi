@@ -12,21 +12,20 @@ const visibleBlackoutSlice = createSlice({
   name: 'blackout',
   initialState,
   reducers: {
-    toggleVisibleBlackout(state) {
-      if (typeof window !== 'undefined' && window.innerWidth < 580) {
-        state.visibleBlackout = !state.visibleBlackout;
-        document.body.style.overflow = state.visibleBlackout
-          ? 'hidden'
-          : 'auto';
-      }
+    trueVisibleBlackout(state) {
+      state.visibleBlackout = true;
+      document.body.classList.add('scroll');
+    },
+    falseVisibleBlackout(state) {
+      state.visibleBlackout = false;
+      document.body.classList.remove('scroll');
     },
     setVisibleBlackout(state, action) {
       state.visibleBlackout = action.payload;
-      document.body.style.overflow = state.visibleBlackout ? 'hidden' : 'auto';
     },
   },
 });
 
-export const { toggleVisibleBlackout, setVisibleBlackout } =
+export const { trueVisibleBlackout, falseVisibleBlackout, setVisibleBlackout } =
   visibleBlackoutSlice.actions;
 export const visibleBlackoutReducer = visibleBlackoutSlice.reducer;

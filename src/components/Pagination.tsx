@@ -2,6 +2,8 @@ import styles from '../styles/Pagination.module.css';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import { useDispatch } from 'react-redux';
+import { trueVisibleBlackout } from '@/redux/slices/visibleBlackoutSlice';
 
 interface IProps {
   handlePaginationClick: () => void;
@@ -10,6 +12,7 @@ interface IProps {
 export default function Pagination({
   handlePaginationClick,
 }: IProps): JSX.Element {
+  const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
   const [details, setDetails] = useState('');
   const searchParams = useSearchParams();
@@ -25,6 +28,7 @@ export default function Pagination({
 
     if (detailsParam) {
       setDetails(`&details=${detailsParam}`);
+      dispatch(trueVisibleBlackout());
     } else {
       setDetails('');
     }

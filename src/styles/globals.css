@@ -18,3 +18,13 @@ body.light {
 body.dark {
   background: #3d3d3d;
 }
+
+.scroll {
+  overflow: hidden;
+}
+
+@media (min-width: 581px) {
+  .scroll {
+    overflow: auto;
+  }
+}
