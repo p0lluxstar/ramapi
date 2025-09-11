@@ -7,3 +7,9 @@
   z-index: 9;
   background-color: rgba(41, 41, 41, 0.9);
 }
+
+@media (min-width: 581px) {
+  .blackout {
+    display: none;
+  }
+}
